@@ -35,11 +35,15 @@ async function Load_data() {
             `SELECT NAME FROM ALL_SNAPSHOTS`,
             `SELECT QUEUE_TABLE, OWNER FROM DBA_QUEUE_TABLES`,
             `SELECT NAME, OWNER FROM DBA_QUEUES`,
-            `SELECT ROLE FROM DBA_ROLES`
+            `SELECT ROLE FROM DBA_ROLES`,
+            `SELECT CLUSTER_NAME FROM DBA_CLUSTERS`,
+            `SELECT TYPE_NAME FROM DBA_TYPES`,
+            `SELECT SEQUENCE_NAME FROM DBA_SEQUENCES`
+
         
         ]
         objetos = ['DB_LINK', 'USER', 'TABLE', 'TABLESPACE', 'INDEX', 'MATERIALIZED_VIEW',
-        'AQ_QUEUE_TABLE', 'AQ_QUEUE', 'ROLE']
+        'AQ_QUEUE_TABLE', 'AQ_QUEUE', 'ROLE','CLUSTER','SEQUENCE','TYPE']
         datos_dev = []
         datos_qas = []
         for (n in consultas) {
